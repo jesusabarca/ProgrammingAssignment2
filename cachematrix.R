@@ -1,6 +1,8 @@
-## Creates a list with all the functions needed to calculate the inverse of a matrix.
+## This script consists in two functions to get the inverse of a matrix and cache the result, so if the function
+## is executed again for the same matrix, it will returned the cached result instead of computing it again.
 
-## Write a short comment describing this function
+## This function creates a list with four functions to store a version of the original input, retrieve the original
+## input, put in cache the result of the previous computation and to retrieve the previous result.
 
 makeCacheMatrix <- function(x = matrix()) {
     i <- NULL
@@ -17,7 +19,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Front end for the makeCacheMatrix function.
+## Front end for the makeCacheMatrix function, it calls the functions of the list returned by the makeCacheMatrix
+## function to compare the previous computation (input and result) with the new input. If the new and previous inputs
+## are the same, then it returns the previous result stored in cache.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
